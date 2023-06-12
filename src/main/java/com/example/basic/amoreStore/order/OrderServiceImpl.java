@@ -13,8 +13,13 @@ public class OrderServiceImpl implements OrderService{
     *   1. 구현체를 제거하고 인터페이스에만 의존
     *   2. 생성자를 생성한다.
     * */
-    AmoreStoreRepository amoreStoreRepository = new MemoryAmoreStoreRepository();
-    DeliveryDetail deliveryDetail = new DeliveryDetailPolicy();
+    AmoreStoreRepository amoreStoreRepository;
+    DeliveryDetail deliveryDetail;
+
+    public OrderServiceImpl(AmoreStoreRepository amoreStoreRepository, DeliveryDetail deliveryDetail) {
+        this.amoreStoreRepository = amoreStoreRepository;
+        this.deliveryDetail = deliveryDetail;
+    }
 /*
     private final AmoreStoreRepository amoreStoreRepository;
     private final DeliveryDetail deliveryDetail;

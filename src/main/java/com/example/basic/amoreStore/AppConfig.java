@@ -1,7 +1,11 @@
 package com.example.basic.amoreStore;
 
+import com.example.basic.amoreStore.deliveryInfo.DeliveryDetailPolicy;
+import com.example.basic.amoreStore.order.OrderService;
+import com.example.basic.amoreStore.order.OrderServiceImpl;
 import com.example.basic.amoreStore.store.AmoreStoreService;
 import com.example.basic.amoreStore.store.AmoreStoreServiceImpl;
+import com.example.basic.amoreStore.store.MemoryAmoreStoreRepository;
 
 public class AppConfig {
 
@@ -10,7 +14,8 @@ public class AppConfig {
         return new AmoreStoreServiceImpl();
     }
 
-    /*public OrderService orderService() {
-        return new OrderServiceImpl(new MemoryAmoreStoreRepository(), new DeliveryDetailPolicy());
-    }*/
+    public OrderService orderService() {
+        return new
+                OrderServiceImpl(new MemoryAmoreStoreRepository(), new DeliveryDetailPolicy());
+    }
 }

@@ -12,9 +12,12 @@ import com.example.basic.amoreStore.store.Location;
 
 public class OrderApp {
     public static void main(String[] args) {
-        AmoreStoreService amoreStoreService = new AmoreStoreServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
-        DeliveryDetail deliveryDetailInfo = new DeliveryDetailPolicy();
+        //AmoreStoreService amoreStoreService = new AmoreStoreServiceImpl();
+       // OrderService orderService = new OrderServiceImpl();
+       // DeliveryDetail deliveryDetailInfo = new DeliveryDetailPolicy();
+        AppConfig appConfig = new AppConfig();
+        AmoreStoreService amoreStoreService = appConfig.amoreStoreService();
+        OrderService orderService = appConfig.orderService();
 
         // 아모레 정보를 저장해준다.
         long storeSn = 1L;
